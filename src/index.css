@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+:root {
+  /* Base Colors */
+  --white: #fff;        /* Off-white – less glare than pure white */
+  --black: #111;        /* Soft black – not absolute #000 */
+
+  /* Brand / Accent Colors */
+  --blue: #3a80e9;        
+  --green: #61c96f;        /* Calm success green */
+  --red: #f94141;          /* Softer error red */
+  
+  /* Neutrals */
+  --grey: #888;         
+  --dark-grey: #1b1b1b;    /* Dark surface tone – good for dark backgrounds */
+}
+
+*{
+    padding:0;
+    margin:0;
+    font-family: 'inter', sans-serif;
+}
+body{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+::selection{
+    background-color: var(--blue);
+    color: var(--white);
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:var(--black);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 3rem;
+}
+a{
+  text-decoration: none;
+}
