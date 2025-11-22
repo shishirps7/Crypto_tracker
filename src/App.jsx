@@ -1,18 +1,20 @@
-import { useState } from 'react'
 import './App.css'
-import Footer from './Components/Common/Footer'
-import Header from './Components/Common/Header'
-import MainComponent from './Components/LandingPage/MainComponent'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import Home from './pages/Home'
 function App() {
 
 
   return (
     <>
-      <div className='app'>
-        {/* <Footer /> */}
-        <Header />
-        <MainComponent/>
+      <div className='app'> 
+       <BrowserRouter>
+       <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/dashboard" element={<Dashboard/>}/>
+       </Routes>
+       
+       </BrowserRouter>
       </div>
     
     </>

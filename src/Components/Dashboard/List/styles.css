@@ -1,0 +1,52 @@
+.list-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.list-row:hover{
+    background-color: var(--dark-grey);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.list-row td{
+    width: 18%;
+    text-align: left;
+}
+.td-image{
+    width: 3rem !important;
+    margin-right: 2rem !important;
+}
+.td-price-change{
+    width: 20% !important;
+}
+.td-align-center{
+    text-align: center;
+}
+.td-align-right{
+    text-align: right;
+}
+.mobile-td-mkt{
+    display: none;
+}
+@media only screen and (max-width: 1200px){
+      .td-icon{
+        display: none;
+    }
+    .td-total-volume{
+        display: none !important;
+    }
+}
+@media only screen and (max-width: 800px){
+    .desktop-td-mkt{
+        display: none;
+    }
+    .mobile-td-mkt{
+        display: table-cell;
+    }
+    .list-row td{
+        width: auto;
+    }
+}
