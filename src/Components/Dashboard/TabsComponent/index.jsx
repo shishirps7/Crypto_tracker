@@ -9,8 +9,10 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import Grid from '../Grid';
 import './styles.css'
 import List from '../List';
+import { div } from 'framer-motion/client';
+import Button from '../../Common/Button';
 
-export default function TabsComponent({coins}) {
+export default function TabsComponent({coins,onSearchChange}) {
   const [value, setValue] = useState('grid');
 
   const handleChange = (event, newValue) => {
@@ -33,19 +35,29 @@ export default function TabsComponent({coins}) {
           </TabList>      
         <TabPanel value="grid">
           <div className='grid-flex'>
-            {coins.map((coin,i)=>{
+            {coins.length==0?
+            <div className='no-item-found-grid'>
+              <h1>No Items Found</h1>
+              <Button text={"Clear Search"} outline={false} onClick={()=>onSearchChange("")}/>
+            </div>:coins.map((coin,i)=>{
          return <Grid  coin={coin} key={i}/>
           })}
           </div>
         </TabPanel>
-        <TabPanel value="list"> 
-          <table className='list-table'>
+        <TabPanel value="list" className='table_tabPanel'> 
+          {coins.length==0?
+            <div className='no-item-found'>
+              <h1>No Items Found</h1>
+              <Button text={"Clear Search"} outline={false} onClick={()=>onSearchChange("")}/>
+            </div>:
+            <table className='list-table'>
             {
               coins.map((item,i)=>{
                 return <List coin={item} key={i}/>
               })
             }
           </table>
+          }
         </TabPanel>
       </TabContext>
     </ThemeProvider>

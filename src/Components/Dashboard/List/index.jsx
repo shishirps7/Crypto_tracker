@@ -4,27 +4,28 @@ import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import { Tooltip } from '@mui/material';
 import convertNumber from '../../../functions/ConvertNumbers';
-const List = ({coin}) => {
+import {motion} from 'framer-motion'
+const List = ({ coin }) => {
   return (
-    <tr className='list-row'>
-          <Tooltip title={coin.name+" logo"}>
-            <td className="td-image">
-        <img src={coin.image} alt="coin_image" className="coin-logo" />
+    <motion.tr className='list-row' initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:0.5,delay:0.05}}>
+      <Tooltip title={coin.name + " logo"}>
+        <td className="td-image">
+          <img src={coin.image} alt="coin_image" className="coin-logo" />
         </td>
-          </Tooltip>
-          <Tooltip title="Symbol and Name" placement='bottom-start'>
+      </Tooltip>
+      <Tooltip title="Symbol and Name" placement='bottom-start'>
         <td>
-        <div className="coin-col">
-          <p className='coin-symbol'>{coin.symbol}</p>
-          <p className='coin-name'>{coin.name}</p>
-        </div>
-      </td>
+          <div className="coin-col">
+            <p className='coin-symbol list-coinSymbol'>{coin.symbol}</p>
+            <p className='coin-name list-coinName'>{coin.name}</p>
+          </div>
+        </td>
       </Tooltip>
       {
         coin.price_change_percentage_24h > 0 ? (
             <Tooltip title="24h Price Change" placement='bottom-start'>
-          <td className="chip-flex">
-            <div className="price-chip">
+          <td className="chip-flex list-chip-flex">
+            <div className="price-chip list-price-chip">
               {coin.price_change_percentage_24h != null
                 ? coin.price_change_percentage_24h.toFixed(2) + " %"
                 : "N/A"}
@@ -36,8 +37,8 @@ const List = ({coin}) => {
             </Tooltip>
         ) : (
           <Tooltip title="24h Price Change" placement='bottom-start'>
-          <td className="chip-flex">
-            <div className="price-chip chip-red">
+          <td className="chip-flex list-chip-flex">
+            <div className="price-chip chip-red list-price-chip">
               {coin.price_change_percentage_24h != null
                 ? coin.price_change_percentage_24h.toFixed(2) + " %"
                 : "N/A"}
@@ -49,15 +50,19 @@ const List = ({coin}) => {
           </Tooltip>
         )
       }
-    <Tooltip title="Current price">
-    <td><h3 className="coin-price td-align-center" style={coin.price_change_percentage_24h >= 0 ? { color: "var(--green)" } : { color: "var(--red)" }}>{coin.current_price != null
+      <Tooltip title="Current price">
+        <td className='desktop-td-price'><h3 className="coin-price td-align-center list-coinPrice" style={coin.price_change_percentage_24h >= 0 ? { color: "var(--green)" } : { color: "var(--red)" }}>{coin.current_price != null
           ? "$" + coin.current_price.toLocaleString()
+          : "N/A"}</h3></td>
+          <td className='mobile-td-price'><h3 className="coin-price td-align-center list-coinPrice" style={coin.price_change_percentage_24h >= 0 ? { color: "var(--green)" } : { color: "var(--red)" }}>{coin.current_price != null
+          ? "$" + convertNumber(coin.current_price)
           : "N/A"}</h3></td> </Tooltip>
-     <Tooltip title="Total volume" ><td> <p className="total_volume td-align-right td-total-volume">{coin.total_volume != null ?coin.total_volume.toLocaleString() : "N/A"}</p></td></Tooltip>
-        
-        <Tooltip title="Market cap"> <td className='desktop-td-mkt'> <p className="market_cap td-align-right">{coin.market_cap != null ? "$" + coin.market_cap.toLocaleString() : "N/A"}</p></td></Tooltip>
-        <Tooltip title="Market cap"> <td className='mobile-td-mkt'> <p className="market_cap td-align-right">{coin.market_cap != null ? "$" + convertNumber(coin.market_cap) : "N/A"}</p></td></Tooltip>
-    </tr>
+      <Tooltip title="Total volume" ><td> <p className="total_volume td-align-right td-total-volume">{coin.total_volume != null ? coin.total_volume.toLocaleString() : "N/A"}</p></td></Tooltip>
+
+      <Tooltip title="Market cap"> <td className='desktop-td-mkt'> <p className="market_cap td-align-right">{coin.market_cap != null ? "$" + coin.market_cap.toLocaleString() : "N/A"}</p></td></Tooltip>
+      <Tooltip title="Market cap"> <td className='mobile-td-mkt'> <p className="market_cap td-align-right  list-marketcap">{coin.market_cap != null ? "$" + convertNumber(coin.market_cap) : "N/A"}</p></td></Tooltip>
+
+    </motion.tr>
   )
 }
 

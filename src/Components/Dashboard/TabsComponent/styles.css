@@ -29,4 +29,24 @@
     .list-table{
     width: 100%;
    }
+
+}
+@media only screen and (max-width: 620px){
+   .css-13xfq8m-MuiTabPanel-root{
+    padding: 0 !important;
+   }
+}
+.no-item-found-grid{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+.no-item-found{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px auto;
 }
