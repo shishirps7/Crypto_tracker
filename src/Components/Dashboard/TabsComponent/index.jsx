@@ -51,11 +51,13 @@ export default function TabsComponent({coins,onSearchChange}) {
               <Button text={"Clear Search"} outline={false} onClick={()=>onSearchChange("")}/>
             </div>:
             <table className='list-table'>
-            {
+               <tbody className='list-table'>
+              {
               coins.map((item,i)=>{
                 return <List coin={item} key={i}/>
               })
             }
+            </tbody>
           </table>
           }
         </TabPanel>

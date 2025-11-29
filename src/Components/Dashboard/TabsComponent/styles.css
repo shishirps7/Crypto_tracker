@@ -16,17 +16,24 @@
     font-weight: 600;
 }
 .list-table{
+    width: 100%;
+    display: block;
+    margin:0 auto;
+    /* background-color: orange; */
+}
+.list-table>tbody{
+    /* background-color: rgb(0, 255, 140); */
     width: 85%;
     display: block;
     margin:0 auto;
 }
 @media only screen and (max-width: 1000px){
-   .list-table{
+   .list-table>tbody{
     width: 90%;
    }
 }
 @media only screen and (max-width: 900px){
-    .list-table{
+    .list-table>tbody{
     width: 100%;
    }
 

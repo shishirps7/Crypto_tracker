@@ -24,3 +24,14 @@
 .search-flex input:focus{
     outline:none;
 }
+@media only screen and (max-width: 500px){
+    .search-flex{
+        width: 60%;
+        gap: 0.5rem;
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+    .search-flex input{
+        font-size: 1rem;
+    }
+}

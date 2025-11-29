@@ -14,14 +14,16 @@
   --grey: #888;         
   --dark-grey: #1b1b1b;    /* Dark surface tone – good for dark backgrounds */
 }
-
+html{
+  scroll-behavior: smooth;
+}
 *{
     
     font-family: 'inter ', sans-serif;
 }
 body{
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
      margin:0;
     background-color: var(--black);
     color: var(--white);
@@ -54,4 +56,43 @@ img {
   -webkit-user-drag: none;
   -moz-user-select: none;
   user-select: none;
+}
+.coinpage-element-wrapper{
+  display: block;
+  width: 90%;
+  background-color: var(--dark-grey);
+  margin: 1.5rem auto;
+  border-radius:0.8rem ;
+  padding: 0rem 0.5rem;
+}
+.coinpage-table{
+    width: 100%;
+    display: block;
+    margin:0 auto;
+}
+.coinpage-table>tbody{
+
+    width: 100%;
+    display: block;
+    padding: 0;
+    /* background-color: #61c96f; */
+}
+@media only screen and (max-width: 1000px){
+   .coinpage-table>tbody{
+    width: 100%;
+   }
+}
+@media only screen and (max-width: 900px){
+    .coinpage-table>tbody{
+    width: 100%;
+   }
+
+}
+@media only screen and (max-width: 620px){
+   .css-13xfq8m-MuiTabPanel-root{
+    padding: 0 !important;
+   }
+   .coinpage-table>tbody>tr{
+    margin: 0;
+   }
 }

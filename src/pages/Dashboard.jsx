@@ -4,6 +4,8 @@ import TabsComponent from '../Components/Dashboard/TabsComponent'
 import axios from 'axios'
 import Search from '../Components/Dashboard/Search'
 import PaginationComponent from '../Components/Dashboard/Pagination'
+import Loader from '../Components/Common/Loader'
+import BackToTop from '../Components/Common/BackToTop'
 
 
 
@@ -12,8 +14,9 @@ const Dashboard = () => {
   const [paginatedCoins,setPaginatedCoins]=useState([])
   const [search,setSearch]=useState("")
   const [page,setPage]=useState(1)
+  const [isLoader,setIsLoader]=useState(true)
   const onSearchChange=(e)=>{
-
+ 
     e==""?setSearch(""):setSearch(e.target.value)
   }
   const handlePageChange=(event,value)=>{
@@ -28,18 +31,25 @@ const Dashboard = () => {
     console.log("data>>",response.data)
     setCoins(response.data)
     setPaginatedCoins(response.data.slice(0,10))
+    setIsLoader(false)
   })
   .catch((error)=>{
     console.log("error>>>",error)
+    setIsLoader(false)
   })
 },[])
-  return (
+  return (<>
+    <Header/>
+    <BackToTop/> 
+    { 
+    isLoader?<Loader/>:
     <div>
-      <Header/>
       <Search search={search} onSearchChange={onSearchChange}/>
       <TabsComponent coins={search?filteredCoins:paginatedCoins} onSearchChange={onSearchChange}/>
       <PaginationComponent page={page} handlePageChange={handlePageChange}/>
     </div>
+    }
+    </>
   )
 }
 

@@ -1,147 +1,152 @@
-.list-row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1.5rem 0;
-    padding: 1rem;
-    border-radius: 0.5rem;
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 90%; */
+  margin: 1.5rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
-.list-row:hover{
-    background-color: var(--dark-grey);
-    transition: all 0.3s;
-    cursor: pointer;
+.list-row:hover {
+  background-color: var(--dark-grey);
+  transition: all 0.3s;
+  cursor: pointer;
 }
-.list-row td{
-    width: 18%;
-    text-align: left;
+.list-row td {
+  width: 18%;
+  text-align: left;
 }
-.td-image{
-    width: 3rem !important;
-    margin-right: 2rem !important;
+.td-image {
+  width: 3rem !important;
+  margin-right: 2rem !important;
 }
-.td-price-change{
-    width: 20% !important;
+.td-price-change {
+  width: 20% !important;
 }
-.td-align-center{
-    text-align: center;
+.td-align-center {
+  text-align: center;
 }
-.td-align-right{
-    text-align: right;
+.td-align-right {
+  text-align: right;
 }
-.mobile-td-mkt{
+.mobile-td-mkt {
+  display: none;
+}
+.desktop-td-price {
+  display: inline-block;
+}
+.mobile-td-price {
+  display: none;
+}
+@media only screen and (min-width: 1200px){
+    .list-row {
+        padding: 1rem 3rem;
+    }
+    .price-chip{
+      white-space: nowrap;
+    }
+}
+@media only screen and (max-width: 1200px) {
+  .td-icon {
     display: none;
+  }
+  .td-total-volume {
+    display: none !important;
+  }
 }
-.desktop-td-price{
-    display: inline-block;
-}
-.mobile-td-price{
+@media only screen and (max-width: 800px) {
+  .desktop-td-mkt {
     display: none;
+  }
+  .mobile-td-mkt {
+    display: table-cell;
+  }
+  .list-row td {
+    width: auto;
+  }
 }
-@media only screen and (max-width: 1200px){
-      .td-icon{
-        display: none;
-    }
-    .td-total-volume{
-        display: none !important;
-    }
-}
-@media only screen and (max-width: 800px){
-    .desktop-td-mkt{
-        display: none;
-    }
-    .mobile-td-mkt{
-        display: table-cell;
-    }
-    .list-row td{
-        width: auto;
-    }
-}
-@media only screen and (max-width: 620px){
-.list-row td{
-    width: fit-content;
-    /* padding-right: 1rem; */
-}
-.td-image{
+@media only screen and (max-width: 620px) {
+  .list-row td {
+    width: fit-content; /* padding-right: 1rem; */
+  }
+  .td-image {
     margin-right: 0 !important;
-}
-.td-image img{
+  }
+  .td-image img {
     width: 2rem !important;
     height: 2rem !important;
-}
-.list-coinName{
+  }
+  .list-coinName {
     font-size: 0.7rem;
-}
-.list-coinSymbol{
+  }
+  .list-coinSymbol {
     font-size: 0.8rem;
-}
-.list-price-chip{
-     display: none;
-}
-.list-chip-flex{
+  }
+  .list-price-chip {
     display: none;
-}
-.list-coinPrice{
+  }
+  .list-chip-flex {
+    display: none;
+  }
+  .list-coinPrice {
     font-size: 0.9rem;
-    margin-left: 2rem;
-    /* margin-right: 2rem; */
-}
-.list-marketcap{
+    margin-left: 2rem; /* margin-right: 2rem; */
+  }
+  .list-marketcap {
     font-size: 0.9rem !important;
     margin-right: 1rem;
-}
-.list-row{
+  }
+  .list-row {
     margin: 1.5rem 1.5rem;
     border-radius: 0.5rem;
-    padding-inline:2rem ;
-}
-.desktop-td-price{
+    padding-inline: 2rem;
+  }
+  .desktop-td-price {
     display: none;
-}
-.mobile-td-price{
+  }
+  .mobile-td-price {
     display: block;
+  }
 }
-}
-@media only screen and (max-width: 500px){
-.list-row td{
-    width: fit-content;
-    /* padding-right: 1rem; */
-}
-.td-image{
+@media only screen and (max-width: 500px) {
+  .list-row td {
+    width: fit-content; /* padding-right: 1rem; */
+  }
+  .td-image {
     margin-right: 0 !important;
-}
-.td-image img{
+  }
+  .td-image img {
     width: 2rem !important;
     height: 2rem !important;
-}
-.list-coinName{
+  }
+  .list-coinName {
     font-size: 0.7rem;
-}
-.list-coinSymbol{
+  }
+  .list-coinSymbol {
     font-size: 0.8rem;
-}
-.list-price-chip{
-     display: none;
-}
-.list-chip-flex{
+  }
+  .list-price-chip {
     display: none;
-}
-.list-coinPrice{
+  }
+  .list-chip-flex {
+    display: none;
+  }
+  .list-coinPrice {
     font-size: 0.9rem;
-    margin-left: 2rem;
-    /* margin-right: 2rem; */
-}
-.list-marketcap{
+    margin-left: 2rem; /* margin-right: 2rem; */
+  }
+  .list-marketcap {
     font-size: 0.9rem !important;
     margin-right: 1rem;
-}
-.list-row{
+  }
+  .list-row {
     margin: 1.5rem 0;
     border-radius: 0.5rem;
-}
-.desktop-td-price{
+  }
+  .desktop-td-price {
     display: none;
-}
-.mobile-td-price{
+  }
+  .mobile-td-price {
     display: block;
-}
+  }
 }
