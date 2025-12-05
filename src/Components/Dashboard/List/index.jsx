@@ -5,14 +5,18 @@ import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import { Tooltip } from '@mui/material';
 import convertNumber from '../../../functions/ConvertNumbers';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const List = ({ coin }) => {
+  const navigate=useNavigate()
   return (
     <motion.tr
       className="list-row"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.05 }}
+      onClick={()=>navigate(`/coin/${coin.id?coin.id:""}`)}
     >
 
       {/* LOGO */}

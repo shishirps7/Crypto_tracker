@@ -6,6 +6,7 @@
   margin: 1.5rem auto;
   padding: 1rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 .list-row:hover {
   background-color: var(--dark-grey);

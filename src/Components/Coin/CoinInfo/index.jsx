@@ -4,7 +4,7 @@ import "./styles.css";
 const CoinInfo = ({ heading, description }) => {
   const shortdesc = description.slice(0, 380);
   const longdesc = description;
-  const [flag, setFlag] = useState(false);
+  const [flag, setFlag] = useState(true);
 
   return (
     <div className='coininfo-element-wrapper'>

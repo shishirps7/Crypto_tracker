@@ -4,6 +4,7 @@
     background-color: var(--dark-grey);
     border: 2px solid var(--dark-grey);
     border-radius: 0.75rem;
+    cursor: pointer;
 }
 .grid-container:hover{
     border-color: var(--green);
