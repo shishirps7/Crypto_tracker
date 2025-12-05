@@ -44,7 +44,6 @@ const ComparePage = () => {
 
       if (coin_data1) CoinObject(setCrypto1Data, coin_data1)
       if (coin_data2) CoinObject(setCrypto2Data, coin_data2)
-
       if (price_data1.length > 0 && price_data2.length > 0) {
         SettingChartData(
           setChartData,
